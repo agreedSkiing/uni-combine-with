@@ -20,6 +20,28 @@ public class CombinedWithTest {
                     .then()
                     .statusCode(200)
                     .body(is("Hello RESTEasy"));
+        }
+
+        @Test
+        void methods() {
+            given()
+                    .when().get("/hello")
+                    .then()
+                    .statusCode(200)
+                    .body(is("Hello RESTEasy"));
+        }
+    }
+    
+    @Nested
+    class using_object_ {
+
+        @Test
+        void constructor() {
+            given()
+                    .when().get("/hello")
+                    .then()
+                    .statusCode(200)
+                    .body(is("Hello RESTEasy"));
                 }
                 @Test
                 void methods() {
@@ -29,15 +51,6 @@ public class CombinedWithTest {
                             .statusCode(200)
                             .body(is("Hello RESTEasy"));
                 }
-    }
-    
-    @Test
-    public void using_object_constructor() {
-        given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("Hello RESTEasy"));
     }
 
 }
