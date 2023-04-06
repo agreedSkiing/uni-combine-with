@@ -1,56 +1,39 @@
 package se.agreedskiing.uni.combined.with.tests;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
-
 @QuarkusTest
 public class CombinedWithTest {
 
-    @Nested
-    class using_record_ {
+  @Nested
+  class using_record_ {
 
-        @Test
-        void constructor() {
-            given()
-                    .when().get("/hello")
-                    .then()
-                    .statusCode(200)
-                    .body(is("Hello RESTEasy"));
-        }
-
-        @Test
-        void methods() {
-            given()
-                    .when().get("/hello")
-                    .then()
-                    .statusCode(200)
-                    .body(is("Hello RESTEasy"));
-        }
-    }
-    
-    @Nested
-    class using_object_ {
-
-        @Test
-        void constructor() {
-            given()
-                    .when().get("/hello")
-                    .then()
-                    .statusCode(200)
-                    .body(is("Hello RESTEasy"));
-                }
-                @Test
-                void methods() {
-                    given()
-                            .when().get("/hello")
-                            .then()
-                            .statusCode(200)
-                            .body(is("Hello RESTEasy"));
-                }
+    @Test
+    void constructor() {
+      fail();
     }
 
+    @Test
+    void methods() {
+      fail();
+    }
+  }
+
+  @Nested
+  class using_object_ {
+
+    @Test
+    void constructor() {
+      fail();
+    }
+
+    @Test
+    void methods() {
+      fail();
+    }
+  }
 }
