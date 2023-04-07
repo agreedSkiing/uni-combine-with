@@ -5,7 +5,7 @@ import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import java.util.List;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import se.agreedskiing.uni.combined.with.tests.pojos.TestListClass;
+import se.agreedskiing.uni.combined.with.tests.pojos.ListClass;
 
 public class CombinedWithListClassTest {
 
@@ -18,7 +18,7 @@ public class CombinedWithListClassTest {
   private static final Uni<List<Boolean>> BOOLEANS = Uni
     .createFrom()
     .item(List.of(true, false));
-  private static final TestListClass EXPECTED = new TestListClass(
+  private static final ListClass EXPECTED = new ListClass(
     List.of(1, 2),
     List.of("text1", "text2"),
     List.of(true, false)
@@ -30,7 +30,7 @@ public class CombinedWithListClassTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(TestListClass::new)
+      .combinedWith(ListClass::new)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -43,7 +43,7 @@ public class CombinedWithListClassTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(TestListClass::of)
+      .combinedWith(ListClass::of)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -80,23 +80,20 @@ public class CombinedWithListClassTest {
         .assertItem(EXPECTED);
     }
 
-    private TestListClass constructor(
+    private ListClass constructor(
       List<Integer> numbers,
       List<String> texts,
       List<Boolean> booleans
     ) {
-      return new TestListClass(numbers, texts, booleans);
+      return new ListClass(numbers, texts, booleans);
     }
 
-    private TestListClass setters(
+    private ListClass setters(
       List<Integer> numbers,
       List<String> texts,
       List<Boolean> booleans
     ) {
-      return new TestListClass()
-        .numbers(numbers)
-        .texts(texts)
-        .booleans(booleans);
+      return new ListClass().numbers(numbers).texts(texts).booleans(booleans);
     }
   }
 }

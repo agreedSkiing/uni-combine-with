@@ -4,7 +4,7 @@ import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import se.agreedskiing.uni.combined.with.tests.pojos.TestListRecord;
+import se.agreedskiing.uni.combined.with.tests.pojos.ListRecord;
 
 class CombinedWithListRecordTest {
 
@@ -17,7 +17,7 @@ class CombinedWithListRecordTest {
   private static final Uni<List<Boolean>> BOOLEANS = Uni
     .createFrom()
     .item(List.of(true, false));
-  private static final TestListRecord EXPECTED = new TestListRecord(
+  private static final ListRecord EXPECTED = new ListRecord(
     List.of(1, 2),
     List.of("text1", "text2"),
     List.of(true, false)
@@ -29,7 +29,7 @@ class CombinedWithListRecordTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(TestListRecord::new)
+      .combinedWith(ListRecord::new)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -42,7 +42,7 @@ class CombinedWithListRecordTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(TestListRecord::of)
+      .combinedWith(ListRecord::of)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -62,11 +62,11 @@ class CombinedWithListRecordTest {
       .assertItem(EXPECTED);
   }
 
-  private TestListRecord constructor(
+  private ListRecord constructor(
     List<Integer> numbers,
     List<String> texts,
     List<Boolean> booleans
   ) {
-    return new TestListRecord(numbers, texts, booleans);
+    return new ListRecord(numbers, texts, booleans);
   }
 }

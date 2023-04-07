@@ -3,15 +3,15 @@ package se.agreedskiing.uni.combined.with.tests.pojos;
 import java.util.List;
 import java.util.Objects;
 
-public class TestListClass {
+public class ListClass {
 
   private List<Integer> numbers;
   private List<String> texts;
   private List<Boolean> booleans;
 
-  public TestListClass() {}
+  public ListClass() {}
 
-  public TestListClass(
+  public ListClass(
     List<Integer> numbers,
     List<String> texts,
     List<Boolean> booleans
@@ -21,12 +21,12 @@ public class TestListClass {
     this.booleans = booleans;
   }
 
-  public static TestListClass of(
+  public static ListClass of(
     List<Integer> numbers,
     List<String> texts,
     List<Boolean> booleans
   ) {
-    return new TestListClass(numbers, texts, booleans);
+    return new ListClass(numbers, texts, booleans);
   }
 
   public List<Integer> numbers() {
@@ -41,17 +41,17 @@ public class TestListClass {
     return booleans;
   }
 
-  public TestListClass numbers(List<Integer> numbers) {
+  public ListClass numbers(List<Integer> numbers) {
     this.numbers = numbers;
     return this;
   }
 
-  public TestListClass texts(List<String> texts) {
+  public ListClass texts(List<String> texts) {
     this.texts = texts;
     return this;
   }
 
-  public TestListClass booleans(List<Boolean> booleans) {
+  public ListClass booleans(List<Boolean> booleans) {
     this.booleans = booleans;
     return this;
   }
@@ -66,7 +66,7 @@ public class TestListClass {
     if (this == obj) {
       return true;
     }
-    if (!(obj instanceof TestListClass other)) {
+    if (!(obj instanceof ListClass other)) {
       return false;
     }
     return (

@@ -2,22 +2,22 @@ package se.agreedskiing.uni.combined.with.tests.pojos;
 
 import java.util.Objects;
 
-public class TestClass {
+public class SimpleClass {
 
   private int number;
   private String text;
   private boolean somethingIs;
 
-  public TestClass() {}
+  public SimpleClass() {}
 
-  public TestClass(int number, String text, boolean somethingIs) {
+  public SimpleClass(int number, String text, boolean somethingIs) {
     this.number = number;
     this.text = text;
     this.somethingIs = somethingIs;
   }
 
-  public static TestClass of(int number, String text, boolean somethingIs) {
-    return new TestClass(number, text, somethingIs);
+  public static SimpleClass of(int number, String text, boolean somethingIs) {
+    return new SimpleClass(number, text, somethingIs);
   }
 
   public int number() {
@@ -32,17 +32,17 @@ public class TestClass {
     return somethingIs;
   }
 
-  public TestClass number(int number) {
+  public SimpleClass number(int number) {
     this.number = number;
     return this;
   }
 
-  public TestClass text(String text) {
+  public SimpleClass text(String text) {
     this.text = text;
     return this;
   }
 
-  public TestClass somethingIs(boolean somethingIs) {
+  public SimpleClass somethingIs(boolean somethingIs) {
     this.somethingIs = somethingIs;
     return this;
   }
@@ -57,7 +57,7 @@ public class TestClass {
     if (this == obj) {
       return true;
     }
-    if (!(obj instanceof TestClass other)) {
+    if (!(obj instanceof SimpleClass other)) {
       return false;
     }
     return (
