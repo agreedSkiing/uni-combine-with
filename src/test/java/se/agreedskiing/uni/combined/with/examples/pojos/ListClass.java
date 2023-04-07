@@ -1,4 +1,4 @@
-package se.agreedskiing.uni.combined.with.tests.pojos;
+package se.agreedskiing.uni.combined.with.examples.pojos;
 
 import java.util.List;
 import java.util.Objects;

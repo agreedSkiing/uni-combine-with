@@ -1,4 +1,4 @@
-package se.agreedskiing.uni.combined.with.tests.pojos;
+package se.agreedskiing.uni.combined.with.examples.pojos;
 
 public record ComplexRecord(
   int number,

@@ -1,9 +1,9 @@
-package se.agreedskiing.uni.combined.with.tests;
+package se.agreedskiing.uni.combined.with.examples;
 
 import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import org.junit.jupiter.api.Test;
-import se.agreedskiing.uni.combined.with.tests.pojos.SimpleRecord;
+import se.agreedskiing.uni.combined.with.examples.pojos.SimpleRecord;
 
 class SimpleRecordTest {
 

@@ -1,10 +1,10 @@
-package se.agreedskiing.uni.combined.with.tests;
+package se.agreedskiing.uni.combined.with.examples;
 
 import io.smallrye.mutiny.Uni;
 import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import se.agreedskiing.uni.combined.with.tests.pojos.SimpleClass;
+import se.agreedskiing.uni.combined.with.examples.pojos.SimpleClass;
 
 public class SimpleClassTest {
 
