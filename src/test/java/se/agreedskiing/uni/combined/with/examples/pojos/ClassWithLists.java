@@ -3,14 +3,14 @@ package se.agreedskiing.uni.combined.with.examples.pojos;
 import java.util.List;
 import java.util.Objects;
 
-public class ListClass {
+public class ClassWithLists {
 
-  public static ListClass of(
+  public static ClassWithLists of(
     final List<Integer> numbers,
     final List<String> texts,
     final List<Boolean> booleans
   ) {
-    return new ListClass(numbers, texts, booleans);
+    return new ClassWithLists(numbers, texts, booleans);
   }
 
   private List<Integer> numbers;
@@ -18,9 +18,9 @@ public class ListClass {
 
   private List<Boolean> booleans;
 
-  public ListClass() {}
+  public ClassWithLists() {}
 
-  public ListClass(
+  public ClassWithLists(
     final List<Integer> numbers,
     final List<String> texts,
     final List<Boolean> booleans
@@ -42,17 +42,17 @@ public class ListClass {
     return booleans;
   }
 
-  public ListClass numbers(final List<Integer> numbers) {
+  public ClassWithLists numbers(final List<Integer> numbers) {
     this.numbers = numbers;
     return this;
   }
 
-  public ListClass texts(final List<String> texts) {
+  public ClassWithLists texts(final List<String> texts) {
     this.texts = texts;
     return this;
   }
 
-  public ListClass booleans(final List<Boolean> booleans) {
+  public ClassWithLists booleans(final List<Boolean> booleans) {
     this.booleans = booleans;
     return this;
   }
@@ -67,7 +67,7 @@ public class ListClass {
     if (this == obj) {
       return true;
     }
-    if (!(obj instanceof final ListClass other)) {
+    if (!(obj instanceof final ClassWithLists other)) {
       return false;
     }
     return (

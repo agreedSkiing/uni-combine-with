@@ -17,7 +17,7 @@ class ComplexRecordTest {
     TEXT,
     BOOLEAN
   );
-  private static final ListRecord LIST_RECORD = new ListRecord(
+  private static final RecordWithLists LIST_RECORD = new RecordWithLists(
     List.of(NUMBER, 2),
     List.of(TEXT, "text2"),
     List.of(BOOLEAN, false)
@@ -32,7 +32,7 @@ class ComplexRecordTest {
   private static final Uni<SimpleRecord> UNI_SIMPLE_RECORD = Uni
     .createFrom()
     .item(SIMPLE_RECORD);
-  private static final Uni<ListRecord> UNI_LIST_RECORD = Uni
+  private static final Uni<RecordWithLists> UNI_LIST_RECORD = Uni
     .createFrom()
     .item(LIST_RECORD);
 
@@ -107,7 +107,7 @@ class ComplexRecordTest {
     final String text,
     final boolean somethingIs,
     final SimpleRecord simple,
-    final ListRecord list
+    final RecordWithLists list
   ) {
     return new ComplexRecord(number, text, somethingIs, simple, list);
   }

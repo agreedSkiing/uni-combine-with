@@ -18,7 +18,7 @@ public class ComplexClassTest {
     TEXT,
     BOOLEAN
   );
-  private static final ListClass LIST_Class = new ListClass(
+  private static final ClassWithLists LIST_Class = new ClassWithLists(
     List.of(NUMBER, 2),
     List.of(TEXT, "text2"),
     List.of(BOOLEAN, false)
@@ -33,7 +33,7 @@ public class ComplexClassTest {
   private static final Uni<SimpleClass> UNI_SIMPLE_CLASS = Uni
     .createFrom()
     .item(SIMPLE_Class);
-  private static final Uni<ListClass> UNI_LIST_CLASS = Uni
+  private static final Uni<ClassWithLists> UNI_LIST_CLASS = Uni
     .createFrom()
     .item(LIST_Class);
 
@@ -119,7 +119,7 @@ public class ComplexClassTest {
       final String text,
       final boolean somethingIs,
       final SimpleClass simple,
-      final ListClass list
+      final ClassWithLists list
     ) {
       return new ComplexClass(number, text, somethingIs, simple, list);
     }
@@ -129,7 +129,7 @@ public class ComplexClassTest {
       final String text,
       final boolean somethingIs,
       final SimpleClass simple,
-      final ListClass list
+      final ClassWithLists list
     ) {
       return new ComplexClass()
         .simple(simple)

@@ -9,13 +9,13 @@ public class ComplexClass extends SimpleClass {
     final String text,
     final boolean somethingIs,
     final SimpleClass simple,
-    final ListClass list
+    final ClassWithLists list
   ) {
     return new ComplexClass(number, text, somethingIs, simple, list);
   }
 
   private SimpleClass simple;
-  private ListClass list;
+  private ClassWithLists list;
 
   public ComplexClass() {}
 
@@ -24,7 +24,7 @@ public class ComplexClass extends SimpleClass {
     final String text,
     final boolean somethingIs,
     final SimpleClass simple,
-    final ListClass list
+    final ClassWithLists list
   ) {
     super(number, text, somethingIs);
     this.simple = simple;
@@ -35,7 +35,7 @@ public class ComplexClass extends SimpleClass {
     return simple;
   }
 
-  public ListClass list() {
+  public ClassWithLists list() {
     return list;
   }
 
@@ -44,7 +44,7 @@ public class ComplexClass extends SimpleClass {
     return this;
   }
 
-  public ComplexClass list(final ListClass list) {
+  public ComplexClass list(final ClassWithLists list) {
     this.list = list;
     return this;
   }

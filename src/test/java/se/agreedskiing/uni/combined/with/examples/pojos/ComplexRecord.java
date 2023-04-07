@@ -5,14 +5,14 @@ public record ComplexRecord(
   String text,
   boolean somethingIs,
   SimpleRecord simple,
-  ListRecord list
+  RecordWithLists list
 ) {
   public static ComplexRecord of(
     final int number,
     final String text,
     final boolean somethingIs,
     final SimpleRecord simple,
-    final ListRecord list
+    final RecordWithLists list
   ) {
     return new ComplexRecord(number, text, somethingIs, simple, list);
   }

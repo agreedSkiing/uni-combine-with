@@ -5,7 +5,7 @@ import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import java.util.List;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
-import se.agreedskiing.uni.combined.with.examples.pojos.ListClass;
+import se.agreedskiing.uni.combined.with.examples.pojos.ClassWithLists;
 
 public class ClassWithListsTest {
 
@@ -18,7 +18,7 @@ public class ClassWithListsTest {
   private static final Uni<List<Boolean>> BOOLEANS = Uni
     .createFrom()
     .item(List.of(true, false));
-  private static final ListClass EXPECTED = new ListClass(
+  private static final ClassWithLists EXPECTED = new ClassWithLists(
     List.of(1, 2),
     List.of("text1", "text2"),
     List.of(true, false)
@@ -30,7 +30,7 @@ public class ClassWithListsTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(ListClass::new)
+      .combinedWith(ClassWithLists::new)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -43,7 +43,7 @@ public class ClassWithListsTest {
       .combine()
       .all()
       .unis(NUMBERS, TEXTS, BOOLEANS)
-      .combinedWith(ListClass::of)
+      .combinedWith(ClassWithLists::of)
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
@@ -80,20 +80,23 @@ public class ClassWithListsTest {
         .assertItem(EXPECTED);
     }
 
-    private ListClass constructor(
+    private ClassWithLists constructor(
       List<Integer> numbers,
       List<String> texts,
       List<Boolean> booleans
     ) {
-      return new ListClass(numbers, texts, booleans);
+      return new ClassWithLists(numbers, texts, booleans);
     }
 
-    private ListClass setters(
+    private ClassWithLists setters(
       List<Integer> numbers,
       List<String> texts,
       List<Boolean> booleans
     ) {
-      return new ListClass().numbers(numbers).texts(texts).booleans(booleans);
+      return new ClassWithLists()
+        .numbers(numbers)
+        .texts(texts)
+        .booleans(booleans);
     }
   }
 }
