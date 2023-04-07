@@ -4,20 +4,29 @@ import java.util.Objects;
 
 public class SimpleClass {
 
+  public static SimpleClass of(
+    final int number,
+    final String text,
+    final boolean somethingIs
+  ) {
+    return new SimpleClass(number, text, somethingIs);
+  }
+
   private int number;
   private String text;
+
   private boolean somethingIs;
 
   public SimpleClass() {}
 
-  public SimpleClass(int number, String text, boolean somethingIs) {
+  public SimpleClass(
+    final int number,
+    final String text,
+    final boolean somethingIs
+  ) {
     this.number = number;
     this.text = text;
     this.somethingIs = somethingIs;
-  }
-
-  public static SimpleClass of(int number, String text, boolean somethingIs) {
-    return new SimpleClass(number, text, somethingIs);
   }
 
   public int number() {
@@ -32,17 +41,17 @@ public class SimpleClass {
     return somethingIs;
   }
 
-  public SimpleClass number(int number) {
+  public SimpleClass number(final int number) {
     this.number = number;
     return this;
   }
 
-  public SimpleClass text(String text) {
+  public SimpleClass text(final String text) {
     this.text = text;
     return this;
   }
 
-  public SimpleClass somethingIs(boolean somethingIs) {
+  public SimpleClass somethingIs(final boolean somethingIs) {
     this.somethingIs = somethingIs;
     return this;
   }
@@ -53,11 +62,11 @@ public class SimpleClass {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public boolean equals(final Object obj) {
     if (this == obj) {
       return true;
     }
-    if (!(obj instanceof SimpleClass other)) {
+    if (!(obj instanceof final SimpleClass other)) {
       return false;
     }
     return (
@@ -65,5 +74,22 @@ public class SimpleClass {
       Objects.equals(text, other.text) &&
       somethingIs == other.somethingIs
     );
+  }
+
+  @Override
+  public String toString() {
+    final StringBuilder builder = new StringBuilder();
+    builder.append("SimpleClass [number=");
+    builder.append(number);
+    builder.append(", ");
+    if (text != null) {
+      builder.append("text=");
+      builder.append(text);
+      builder.append(", ");
+    }
+    builder.append("somethingIs=");
+    builder.append(somethingIs);
+    builder.append("]");
+    return builder.toString();
   }
 }

@@ -8,9 +8,9 @@ public record ListRecord(
   List<Boolean> booleans
 ) {
   public static ListRecord of(
-    List<Integer> numbers,
-    List<String> texts,
-    List<Boolean> booleans
+    final List<Integer> numbers,
+    final List<String> texts,
+    final List<Boolean> booleans
   ) {
     return new ListRecord(numbers, texts, booleans);
   }

@@ -10,10 +10,24 @@
     },
     {
       "type": "shell",
+      "group": "none",
+      "problemMatcher": [],
+      "label": "check versions",
+      "command": "mvn versions:display-property-updates"
+    },
+    {
+      "type": "shell",
+      "group": "test",
+      "problemMatcher": [],
+      "label": "fail at end",
+      "command": "mvn -B clean test --fae | tee run-$(date +%Y-%m-%dT%H:%M:%S%:z).log"
+    },
+    {
+      "type": "shell",
       "group": "test",
       "problemMatcher": [],
       "label": "test",
-      "command": "mvn -B clean test --fae | tee run-$(date +%Y-%m-%dT%H:%M:%S%:z).log"
+      "command": "mvn -B clean test | tee run-$(date +%Y-%m-%dT%H:%M:%S%:z).log"
     },
     {
       "type": "shell",
