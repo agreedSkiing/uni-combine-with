@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import se.agreedskiing.uni.combined.with.tests.pojos.SimpleClass;
 
-public class CombinedWithClassTest {
+public class SimpleClassTest {
 
   private static final Uni<Integer> NUMBER = Uni.createFrom().item(1);
   private static final Uni<String> TEXT = Uni.createFrom().item("text");
