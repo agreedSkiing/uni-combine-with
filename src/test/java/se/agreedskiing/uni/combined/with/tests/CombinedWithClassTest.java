@@ -9,7 +9,7 @@ import se.agreedskiing.uni.combined.with.tests.pojos.SimpleClass;
 public class CombinedWithClassTest {
 
   private static final Uni<Integer> NUMBER = Uni.createFrom().item(1);
-  private static final Uni<String> TEXT = Uni.createFrom().item("texts");
+  private static final Uni<String> TEXT = Uni.createFrom().item("text");
   private static final Uni<Boolean> BOOLEAN = Uni.createFrom().item(true);
   private static final SimpleClass EXPECTED = new SimpleClass(1, "text", true);
 
