@@ -1,7 +1,7 @@
 package se.agreedskiing.uni.combined.with.tests.pojos;
 
-public record TestRecord(int number, String text, boolean somethingIs) {
-  public static TestRecord of(int number, String text, boolean somethingIs) {
-    return new TestRecord(number, text, somethingIs);
+public record SimpleRecord(int number, String text, boolean somethingIs) {
+  public static SimpleRecord of(int number, String text, boolean somethingIs) {
+    return new SimpleRecord(number, text, somethingIs);
   }
 }
