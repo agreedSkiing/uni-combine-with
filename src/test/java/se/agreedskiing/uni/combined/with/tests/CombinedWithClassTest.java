@@ -11,7 +11,7 @@ public class CombinedWithClassTest {
   private static final Uni<Integer> NUMBER = Uni.createFrom().item(1);
   private static final Uni<String> TEXT = Uni.createFrom().item("text");
   private static final Uni<Boolean> BOOLEAN = Uni.createFrom().item(true);
-  private static final TestClass expected = new TestClass(1, "text", true);
+  private static final TestClass EXPECTED = new TestClass(1, "text", true);
 
   @Test
   void constructor() {
@@ -23,7 +23,7 @@ public class CombinedWithClassTest {
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
-      .assertItem(expected);
+      .assertItem(EXPECTED);
   }
 
   @Test
@@ -36,7 +36,7 @@ public class CombinedWithClassTest {
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
-      .assertItem(expected);
+      .assertItem(EXPECTED);
   }
 
   @Nested
@@ -52,7 +52,7 @@ public class CombinedWithClassTest {
         .subscribe()
         .withSubscriber(UniAssertSubscriber.create())
         .awaitItem()
-        .assertItem(expected);
+        .assertItem(EXPECTED);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CombinedWithClassTest {
         .subscribe()
         .withSubscriber(UniAssertSubscriber.create())
         .awaitItem()
-        .assertItem(expected);
+        .assertItem(EXPECTED);
     }
 
     private TestClass constructor(

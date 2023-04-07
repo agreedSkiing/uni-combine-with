@@ -10,7 +10,7 @@ class CombinedWithRecordTest {
   private static final Uni<Integer> NUMBER = Uni.createFrom().item(1);
   private static final Uni<String> TEXT = Uni.createFrom().item("text");
   private static final Uni<Boolean> BOOLEAN = Uni.createFrom().item(true);
-  private static final TestRecord expected = new TestRecord(1, "text", true);
+  private static final TestRecord EXPECTED = new TestRecord(1, "text", true);
 
   @Test
   void constructor() {
@@ -22,7 +22,7 @@ class CombinedWithRecordTest {
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
-      .assertItem(expected);
+      .assertItem(EXPECTED);
   }
 
   @Test
@@ -35,7 +35,7 @@ class CombinedWithRecordTest {
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
-      .assertItem(expected);
+      .assertItem(EXPECTED);
   }
 
   @Test
@@ -48,7 +48,7 @@ class CombinedWithRecordTest {
       .subscribe()
       .withSubscriber(UniAssertSubscriber.create())
       .awaitItem()
-      .assertItem(expected);
+      .assertItem(EXPECTED);
   }
 
   private TestRecord constructor(int number, String text, boolean somethingIs) {

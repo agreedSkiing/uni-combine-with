@@ -1,4 +1,6 @@
 {
   "singleAttributePerLine": true,
-  "xmlWhitespaceSensitivity": "ignore"
+  "xmlWhitespaceSensitivity": "ignore",
+  "printWidth": 80,
+  "endOfLine": "lf"
 }
