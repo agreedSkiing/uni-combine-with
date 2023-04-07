@@ -5,7 +5,7 @@ import io.smallrye.mutiny.helpers.test.UniAssertSubscriber;
 import org.junit.jupiter.api.Test;
 import se.agreedskiing.uni.combined.with.tests.pojos.SimpleRecord;
 
-class RecordTest {
+class SimpleRecordTest {
 
   private static final Uni<Integer> NUMBER = Uni.createFrom().item(1);
   private static final Uni<String> TEXT = Uni.createFrom().item("text");
