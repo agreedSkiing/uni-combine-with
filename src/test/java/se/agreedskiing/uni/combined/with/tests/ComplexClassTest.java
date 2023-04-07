@@ -74,7 +74,7 @@ public class ComplexClassTest {
   }
 
   @Nested
-  class method_ {
+  class method {
 
     @Test
     void using_constructor() {

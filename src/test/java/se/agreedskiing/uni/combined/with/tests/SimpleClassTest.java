@@ -41,7 +41,7 @@ public class SimpleClassTest {
   }
 
   @Nested
-  class method_ {
+  class method {
 
     @Test
     void using_constructor() {
