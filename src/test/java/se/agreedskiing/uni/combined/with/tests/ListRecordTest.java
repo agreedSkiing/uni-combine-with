@@ -6,7 +6,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import se.agreedskiing.uni.combined.with.tests.pojos.ListRecord;
 
-class CombinedWithListRecordTest {
+class ListRecordTest {
 
   private static final Uni<List<Integer>> NUMBERS = Uni
     .createFrom()

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import se.agreedskiing.uni.combined.with.tests.pojos.ListClass;
 
-public class CombinedWithListClassTest {
+public class ListClassTest {
 
   private static final Uni<List<Integer>> NUMBERS = Uni
     .createFrom()
