@@ -12,10 +12,10 @@ public class SimpleClass {
     return new SimpleClass(number, text, somethingIs);
   }
 
-  private int number;
-  private String text;
+  protected int number;
+  protected String text;
 
-  private boolean somethingIs;
+  protected boolean somethingIs;
 
   public SimpleClass() {}
 
